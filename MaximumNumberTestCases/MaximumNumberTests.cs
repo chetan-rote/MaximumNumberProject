@@ -7,49 +7,46 @@ namespace FindMaximumNumberTest
     public class MaximumNumberTestCases
     {
         /// <summary>
-        /// TC_1.1
-        /// Givens the maximum number at first position should return same number.
+        /// Givens the integer array should return largest integer.
         /// </summary>
         [TestMethod]
-        public void GivenMaximumNumberAtFirstPosition_ShouldReturn_SameNumber()
+        public void GivenIntegerArray_Should_Return_LargestInteger()
         {
             ///Arrange
-            int expectedValue = 11;
-            MaximumNumberCheck maximumNumber = new MaximumNumberCheck();
+            int[] values = { 3, 6, 7, 10, 4, 8 };
+            MaximumNumberCheck<int> maximumNumber = new MaximumNumberCheck<int>(values);
             ///Act
-            int actualValue = maximumNumber.MaximumIntegerNumber(11, 9, 5);
+            int max = maximumNumber.MaxMethod();
             ///Assert
-            Assert.AreEqual(expectedValue, actualValue);
+            Assert.AreEqual(10, max);
         }
         /// <summary>
-        /// TC_1.2
-        /// Givens the maximum number at second postion should return same number.
+        /// Givens the double array should return largest double.
         /// </summary>
         [TestMethod]
-        public void GivenMaximumNumberAtSecondPostion_ShouldReturn_SameNumber()
+        public void GivenDoubleArray_Should_Return_LargestDouble()
         {
             ///Arrange
-            int expectedValue = 11;
-            MaximumNumberCheck maximumNumber = new MaximumNumberCheck();
+            double[] values = { 10.6, 25.9, 8.2, 9.56, 20.8, 6.9, 21.5 };
+            MaximumNumberCheck<double> maximumNumber = new MaximumNumberCheck<double>(values);
             ///Act
-            int actualValue = maximumNumber.MaximumIntegerNumber(9, 11, 5);
+            double max = maximumNumber.MaxMethod();
             ///Assert
-            Assert.AreEqual(expectedValue, actualValue);
+            Assert.AreEqual(25.9, max);
         }
         /// <summary>
-        /// TC_1.3
-        /// Givens the maximum number at third position should return same number.
+        /// Givens the string array should return largest string.
         /// </summary>
         [TestMethod]
-        public void GivenMaximumNumberAtThirdPosition_ShouldReturn_SameNumber()
+        public void GivenStringArray_Should_Return_LargestString()
         {
             ///Arrange
-            int expectedValue = 11;
-            MaximumNumberCheck maximumNumber = new MaximumNumberCheck();
+            string[] values = { "222", "498", "999", "333", "777", "888" };
+            MaximumNumberCheck<string> maximumNumber = new MaximumNumberCheck<string>(values);
             ///Act
-            int actualValue = maximumNumber.MaximumIntegerNumber(5, 9, 11);
+            string max = maximumNumber.MaxMethod();
             ///Assert
-            Assert.AreEqual(expectedValue, actualValue);
+            Assert.AreEqual("999", max);
         }
     }
 }

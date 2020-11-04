@@ -21,35 +21,26 @@ namespace MaximumNumberProject
         /// <param name="args">The arguments.</param>
         static void Main(string[] args)
         {
-            ///Creates reference object.
-            MaximumNumberCheck maximumNumber = new MaximumNumberCheck();
-            Console.WriteLine("Welcome to Maximum Number Project.");
-            ///Reads 3 integer values from user.
-            Console.WriteLine("Enter three integers to find max of them.");
-            int firstValue = Convert.ToInt32(Console.ReadLine());
-            int secondValue = Convert.ToInt32(Console.ReadLine());
-            int thirdValue = Convert.ToInt32(Console.ReadLine());
-            ///Passes Values as parameter to method and stores max value in variable..
-            int maxIntNumber = maximumNumber.MaximumIntegerNumber(firstValue, secondValue, thirdValue);
-            Console.WriteLine("Maximum integer value is:" + maxIntNumber);
+            ///Integer array with values.
+            int[] intArray = { 11, 55, 22, 33, 44 };
+            ///Creates reference of the genreic class by passing int type.
+            MaximumNumberCheck<int> maximumNumberCheck = new MaximumNumberCheck<int>(intArray);
+            int maxIntNumber = maximumNumberCheck.MaxMethod();
+            Console.WriteLine("Maximum integer value is: " + maxIntNumber);
 
-            ///Reads 3 double values from user.
-            Console.WriteLine("Enter three float numbers.");
-            double firstDoubleValue = Convert.ToDouble(Console.ReadLine());
-            double secondDoubleValue = Convert.ToDouble(Console.ReadLine());
-            double thirdDoubleValue = Convert.ToDouble(Console.ReadLine());
-            ///Passes Values as parameter to method and stores max value in variable.
-            double maxDoubleNumber = maximumNumber.MaximumDoubleNumber(firstDoubleValue, secondDoubleValue, thirdDoubleValue);
-            Console.WriteLine("Maximum double value is: " + maxDoubleNumber);
+            ///Double array with values.
+            double[] doubleArray = { 11.1, 22.5, 64.5, 33.4 };
+            ///Creates reference of the genreic class by passing double type.
+            MaximumNumberCheck<double> maximumNumberCheck1 = new MaximumNumberCheck<double>(doubleArray);
+            double maxDoubleNumber = maximumNumberCheck1.MaxMethod();
+            Console.WriteLine("Maximum double value is: "+ maxDoubleNumber);
 
-            ///Reads 3 strings from user.
-            Console.WriteLine("Enter 3 strings.");
-            string firstString = Console.ReadLine();
-            string secondString = Console.ReadLine();
-            string thirdString = Console.ReadLine();
-            ///Passes string as parameter to method and stores max string in variable.
-            string maxString = maximumNumber.MaximumString(firstString, secondString, thirdString);
-            Console.WriteLine("Maximum string is: " + maxString);
+            ///String array with values.
+            string[] stringArray = { "563", "235", "425", "112"};
+            ///Creates reference of the genreic class by passing string type.
+            MaximumNumberCheck<string> maximumNumberCheck2 = new MaximumNumberCheck<string>(stringArray);
+            string maxString = maximumNumberCheck2.MaxMethod();
+            Console.WriteLine("Maximum string value is: " + maxString);
         }
     }
 }
