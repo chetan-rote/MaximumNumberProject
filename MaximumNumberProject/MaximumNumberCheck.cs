@@ -67,7 +67,7 @@ namespace MaximumNumberProject
         /// <param name="secondString">The second string.</param>
         /// <param name="thirdString">The third string.</param>
         /// <returns></returns>
-        /// <exception cref="System.Exception">All the strings  are same.</exception>
+        /// <exception cref="System.Exception">the strings  are same.</exception>
         public string MaximumString(string firstString, string secondString, string thirdString)
         {
             if (firstString.CompareTo(secondString) > 0 && firstString.CompareTo(thirdString) > 0)
