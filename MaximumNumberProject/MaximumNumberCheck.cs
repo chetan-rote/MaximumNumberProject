@@ -6,6 +6,9 @@ namespace MaximumNumberProject
 {
     public class MaximumNumberCheck<T> where T : IComparable 
     {
+        /// <summary>
+        /// Generic T value
+        /// </summary>
         public T[] value;
         /// <summary>
         /// Initializes a new instance of the <see cref="MaximumNumberCheck{T}"/> class.
@@ -16,7 +19,7 @@ namespace MaximumNumberProject
             this.value = value;
         }
         /// <summary>
-        /// Sorts the specified values.
+        /// Sorts the specified values in array.
         /// </summary>
         /// <param name="values">The values.</param>
         /// <returns></returns>
@@ -26,7 +29,7 @@ namespace MaximumNumberProject
             return values;
         }
         /// <summary>
-        /// Finds maximum value.
+        /// Finds maximum value from arrray.
         /// </summary>
         /// <param name="values">The values.</param>
         /// <returns></returns>
@@ -43,6 +46,14 @@ namespace MaximumNumberProject
         {
             var max = MaxValue(this.value);
             return max;
+        }
+        /// <summary>
+        /// Prints the maximum value.
+        /// </summary>
+        public void PrintMaxValue()
+        {
+            var max = MaxValue(this.value);
+            Console.WriteLine("Maximum value is:" + max);
         }
     }
 }
