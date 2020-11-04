@@ -32,7 +32,30 @@ namespace MaximumNumberProject
             {
                 return thirdValue;
             }
-
+            throw new Exception("All the number have same value");
+        }
+        /// <summary>
+        /// Find's maximum double number.
+        /// </summary>
+        /// <param name="firstValue">The first value.</param>
+        /// <param name="secondValue">The second value.</param>
+        /// <param name="thirdValue">The third value.</param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception">All the number have same value</exception>
+        public double MaximumDoubleNumber(double firstValue, double secondValue, double thirdValue)
+        {
+            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0)
+            {
+                return firstValue;
+            }
+            if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0)
+            {
+                return secondValue;
+            }
+            if (thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) > 0)
+            {
+                return thirdValue;
+            }
             throw new Exception("All the number have same value");
         }
     }
