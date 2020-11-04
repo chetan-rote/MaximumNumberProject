@@ -35,6 +35,7 @@ namespace MaximumNumberProject
             throw new Exception("All the number have same value");
         }
         /// <summary>
+        /// UC_2
         /// Find's maximum double number.
         /// </summary>
         /// <param name="firstValue">The first value.</param>
@@ -57,6 +58,31 @@ namespace MaximumNumberProject
                 return thirdValue;
             }
             throw new Exception("All the number have same value");
+        }
+        /// <summary>
+        /// UC_3
+        /// Find's maximum the string.
+        /// </summary>
+        /// <param name="firstString">The first string.</param>
+        /// <param name="secondString">The second string.</param>
+        /// <param name="thirdString">The third string.</param>
+        /// <returns></returns>
+        /// <exception cref="System.Exception">the strings  are same.</exception>
+        public string MaximumString(string firstString, string secondString, string thirdString)
+        {
+            if (firstString.CompareTo(secondString) > 0 && firstString.CompareTo(thirdString) > 0)
+            {
+                return firstString;
+            }
+            if (secondString.CompareTo(firstString) > 0 && secondString.CompareTo(thirdString) > 0)
+            {
+                return secondString;
+            }
+            if (thirdString.CompareTo(firstString) > 0 && thirdString.CompareTo(secondString) > 0)
+            {
+                return thirdString;
+            }
+            throw new Exception("All the strings  are same.");
         }
     }
 }
