@@ -41,6 +41,15 @@ namespace MaximumNumberProject
             ///Passes Values as parameter to method and stores max value in variable.
             double maxDoubleNumber = maximumNumber.MaximumDoubleNumber(firstDoubleValue, secondDoubleValue, thirdDoubleValue);
             Console.WriteLine("Maximum double value is: " + maxDoubleNumber);
+
+            ///Reads 3 strings from user.
+            Console.WriteLine("Enter 3 strings.");
+            string firstString = Console.ReadLine();
+            string secondString = Console.ReadLine();
+            string thirdString = Console.ReadLine();
+            ///Passes string as parameter to method and stores max string in variable.
+            string maxString = maximumNumber.MaximumString(firstString, secondString, thirdString);
+            Console.WriteLine("Maximum string is: " + maxString);
         }
     }
 }
