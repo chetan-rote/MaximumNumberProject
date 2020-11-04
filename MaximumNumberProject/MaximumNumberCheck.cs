@@ -4,85 +4,45 @@ using System.Text;
 
 namespace MaximumNumberProject
 {
-    public class MaximumNumberCheck
+    public class MaximumNumberCheck<T> where T : IComparable 
     {
+        public T[] value;
         /// <summary>
-        /// UC_1
-        /// Find's maximum integer number.
+        /// Initializes a new instance of the <see cref="MaximumNumberCheck{T}"/> class.
         /// </summary>
-        /// <param name="firstValue">The first value.</param>
-        /// <param name="secondValue">The second value.</param>
-        /// <param name="thirdValue">The third value.</param>
-        /// <returns></returns>
-        /// <exception cref="System.Exception">All the number have same value</exception>
-        public int MaximumIntegerNumber(int firstValue, int secondValue, int thirdValue)
+        /// <param name="value">The value.</param>
+        public MaximumNumberCheck(T[] value)
         {
-            ///Checks whether firstValue is greater than other two, if it's greater will return firstValue.
-            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0)
-            {
-                return firstValue;
-            }
-            ///Checks whether secondValue is greater than other two, if it's greater will return secondValue.
-            if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0)
-            {
-                return secondValue;
-            }
-            ///Checks whether thirdValue is greater than other two, if it's greater will return thirdValue.
-            if (thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) > 0)
-            {
-                return thirdValue;
-            }
-            throw new Exception("All the number have same value");
+            this.value = value;
         }
         /// <summary>
-        /// UC_2
-        /// Find's maximum double number.
+        /// Sorts the specified values.
         /// </summary>
-        /// <param name="firstValue">The first value.</param>
-        /// <param name="secondValue">The second value.</param>
-        /// <param name="thirdValue">The third value.</param>
+        /// <param name="values">The values.</param>
         /// <returns></returns>
-        /// <exception cref="System.Exception">All the number have same value</exception>
-        public double MaximumDoubleNumber(double firstValue, double secondValue, double thirdValue)
+        public T[] Sort(T[] values)
         {
-            if (firstValue.CompareTo(secondValue) > 0 && firstValue.CompareTo(thirdValue) > 0)
-            {
-                return firstValue;
-            }
-            if (secondValue.CompareTo(firstValue) > 0 && secondValue.CompareTo(thirdValue) > 0)
-            {
-                return secondValue;
-            }
-            if (thirdValue.CompareTo(firstValue) > 0 && thirdValue.CompareTo(secondValue) > 0)
-            {
-                return thirdValue;
-            }
-            throw new Exception("All the number have same value");
+            Array.Sort(values);
+            return values;
         }
         /// <summary>
-        /// UC_3
-        /// Find's maximum the string.
+        /// Finds maximum value.
         /// </summary>
-        /// <param name="firstString">The first string.</param>
-        /// <param name="secondString">The second string.</param>
-        /// <param name="thirdString">The third string.</param>
+        /// <param name="values">The values.</param>
         /// <returns></returns>
-        /// <exception cref="System.Exception">the strings  are same.</exception>
-        public string MaximumString(string firstString, string secondString, string thirdString)
+        public T MaxValue(params T[] values)
         {
-            if (firstString.CompareTo(secondString) > 0 && firstString.CompareTo(thirdString) > 0)
-            {
-                return firstString;
-            }
-            if (secondString.CompareTo(firstString) > 0 && secondString.CompareTo(thirdString) > 0)
-            {
-                return secondString;
-            }
-            if (thirdString.CompareTo(firstString) > 0 && thirdString.CompareTo(secondString) > 0)
-            {
-                return thirdString;
-            }
-            throw new Exception("All the strings  are same.");
+            var sorted_values = Sort(values);
+            return sorted_values[^1];
+        }
+        /// <summary>
+        /// Stores the max value on max variable and returns it.
+        /// </summary>
+        /// <returns></returns>
+        public T MaxMethod()
+        {
+            var max = MaxValue(this.value);
+            return max;
         }
     }
 }
