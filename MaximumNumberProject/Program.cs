@@ -36,7 +36,7 @@ namespace MaximumNumberProject
             maximumNumberCheck1.PrintMaxValue();
 
             ///String array with values.
-            string[] stringArray = { "563", "235", "425", "112"};
+            string[] stringArray = { "25", "35", "63", "12"};
             ///Creates reference of the genreic class by passing string type.
             MaximumNumberCheck<string> maximumNumberCheck2 = new MaximumNumberCheck<string>(stringArray);
             ///Prints max value using printMax Generic method.

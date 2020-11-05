@@ -27,7 +27,7 @@ namespace FindMaximumNumberTest
         public void GivenDoubleArray_Should_Return_LargestDouble()
         {
             ///Arrange
-            double[] values = { 10.6, 25.9, 8.2, 9.56, 20.8, 6.9, 21.5 };
+            double[] values = { 10.6, 25.9, 8.2, 9.56};
             MaximumNumberCheck<double> maximumNumber = new MaximumNumberCheck<double>(values);
             ///Act
             double max = maximumNumber.MaxMethod();
@@ -41,12 +41,12 @@ namespace FindMaximumNumberTest
         public void GivenStringArray_Should_Return_LargestString()
         {
             ///Arrange
-            string[] values = { "222", "498", "999", "333", "777", "888" };
+            string[] values = { "22", "98", "99", "33"};
             MaximumNumberCheck<string> maximumNumber = new MaximumNumberCheck<string>(values);
             ///Act
             string max = maximumNumber.MaxMethod();
             ///Assert
-            Assert.AreEqual("999", max);
+            Assert.AreEqual("99", max);
         }
     }
 }
